@@ -4,10 +4,17 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
 <h:body>
-    <h1>Teste</h1>
-    <h:form>
-        <h:inputText />
-        <h:commandButton value="Gravar" />
+    <h:form id="formPessoa">
+        <h:outputLabel value="Nome" />
+        <h:inputText id="nome" value="#{usuarioController.name}" />
+        <br/>
+        <h:commandButton value="Botão" action="#{usuarioController.addNome}" disabled="#{usuarioController.nomes.size() > 2}" />
+        <br/>
+        <h:dataTable value="#{usuarioController.nomes}" var="name">
+            <h:column>
+                <h:outputText value="#{name}" />
+            </h:column>
+        </h:dataTable>
     </h:form>
 </h:body>
 
