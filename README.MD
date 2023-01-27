@@ -11,3 +11,5 @@ https://www.youtube.com/watch?v=JIRDMGJ66SE
 4. Na aba deployments adicionar o Artifact: web exploded no build
 5. Modificar o Path do context do Servidor
 6. Tentar rodar
+
+<img src="./images/server-config.png">
