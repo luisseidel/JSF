@@ -16,11 +16,21 @@ import java.util.List;
 public class UsuarioController {
 
     private String name;
-    private List<String> nomes = new ArrayList<>();
+    private String senha;
+    private String texto;
+    private List<UsuarioController> nomes = new ArrayList<>();
+
+    public UsuarioController() {}
+
+    public UsuarioController(String name, String senha, String texto) {
+        this.name = name;
+        this.senha = senha;
+        this.texto = texto;
+    }
 
     public String addNome() {
-        nomes.add(name);
-        return "";
+        nomes.add(new UsuarioController(name, senha, texto));
+        return (nomes.size() >= 3 ? "segundapagina?faces-redirect=true" : "");
     }
 
 }

@@ -3,18 +3,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html">
 
+<h:head>
+    <script>
+       function teste() {
+           var campo = document.getElementById("formNavegar:clickjs");
+           campo.value = 'teste';
+       }
+    </script>
+</h:head>
+
 <h:body>
-    <h:form id="formPessoa">
-        <h:outputLabel value="Nome" />
-        <h:inputText id="nome" value="#{usuarioController.name}" />
+    <h:form id="formNavegar" >
+        <h1>Olá</h1>
+        <h:commandButton value="Navegar" action="primeirapagina" />
         <br/>
-        <h:commandButton value="Botão" action="#{usuarioController.addNome}" disabled="#{usuarioController.nomes.size() > 2}" />
         <br/>
-        <h:dataTable value="#{usuarioController.nomes}" var="name">
-            <h:column>
-                <h:outputText value="#{name}" />
-            </h:column>
-        </h:dataTable>
+        <h:inputText id="clickjs" onkeypress="this.value = this.value.toUpperCase();"/>
+        <br/>
+        <h:commandButton value="Click JS" onclick="teste()" />
     </h:form>
 </h:body>
 

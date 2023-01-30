@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:body>
+    <h:form id="formPessoa">
+        <h:outputLabel value="Nome" />
+        <h:inputText id="nome" value="#{usuarioController.name}" />
+        <h:inputSecret id="senha" value="#{usuarioController.senha}" />
+        <h:inputTextarea id="texto" value="#{usuarioController.texto}" />
+        <br/>
+        <h:commandButton value="Botão" action="#{usuarioController.addNome}" disabled="#{usuarioController.nomes.size() > 2}" />
+        <br/>
+        <h:dataTable value="#{usuarioController.nomes}" var="name">
+            <h:column>
+                <h:outputText value="#{name}" />
+            </h:column>
+        </h:dataTable>
+    </h:form>
+</h:body>
+
+</html>
